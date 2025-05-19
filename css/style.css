@@ -1,0 +1,59 @@
+:root {
+  --page-dark-bg: #384454;
+}
+
+html, body, main, #status_footer {
+  transition: background-color 0.5s ease-in-out;
+}
+
+.preserve-3d { 
+  transform-style: preserve-3d; 
+}
+
+.backface-hidden { 
+  backface-visibility: hidden; 
+}
+
+.flip-rotate { 
+  transition: transform 0.5s ease; 
+}
+
+.flip .card-inner { 
+  transform: rotateY(180deg); 
+}
+
+#game_grid .card {        
+  position: relative;     
+}
+
+body.light-theme main,
+body.light-theme #status_footer {
+  background-color: white;
+}
+
+body.dark-theme main,
+body.dark-theme #status_footer {
+  background-color: #384454;
+}
+
+.card {
+  background-color: inherit;
+}
+
+#status_footer {
+  width: 100%;           
+  background-color: inherit;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;        
+  box-sizing: border-box;  
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+

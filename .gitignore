@@ -1,0 +1,6 @@
+.env
+node_modules/
+.tailwindcache/
+*.log
+.DS_Store
+package-lock.json

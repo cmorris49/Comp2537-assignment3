@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-hidden h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="font-sans m-0 flex flex-col h-screen overflow-hidden">
+
+  <div id="status_header" class="bg-[#192653] text-white flex flex-wrap items-center justify-center gap-4 p-4">
+    <div class="flex items-center space-x-3">
+      <span class="text-white">🌞/🌙</span>
+      <label for="themeToggle" class="relative inline-block cursor-pointer">
+        <input type="checkbox" id="themeToggle" class="sr-only peer" />
+        <div class="w-11 h-6 bg-gray-200 rounded-full ring-2 ring-[#ffcb05] peer-checked:bg-[#192653] transition-colors duration-200"></div>
+        <div class="absolute left-0.5 top-0.5 h-5 w-5 bg-white border border-gray-300 rounded-full peer-checked:left-5 transition-all duration-200"></div>
+      </label>
+    </div>
+
+
+    <button id="peekBtn" class="px-3 py-1 bg-[#ffcb05] text-[#192653] rounded-lg shadow hover:bg-[#ffcb05]/90 disabled:opacity-50">
+      🔍 Peek (1)
+    </button>
+
+    <span id="clicks" class="text-gray-700 dark:text-gray-300">Clicks: 0</span>
+    <span id="pairs_matched" class="text-gray-700 dark:text-gray-300">Matched: 0</span>
+    <span id="pairs_left" class="text-gray-700 dark:text-gray-300">Left: 3</span>
+    <span id="total_pairs" class="text-gray-700 dark:text-gray-300">Total: 3</span>
+    <span id="timer" class="text-gray-700 dark:text-gray-300">Time: 00:00</span>
+
+    <select id="difficulty" class="px-2 py-1 border rounded dark:bg-gray-700 dark:text-gray-200">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+
+    <button id="startBtn" class="px-3 py-1 bg-white text-[#192653] rounded-lg shadow hover:bg-white/90">
+      Start
+    </button>
+
+    <button id="resetBtn" class="px-3 py-1 bg-[#cf4214] text-white rounded-lg shadow hover:bg-[#cf4214]/90">
+      Reset
+    </button>
+  </div>
+
+  <main id="game_wrapper" class="flex-grow overflow-hidden flex items-start justify-center w-full">
+    <div id="game_grid" class="grid gap-4 p-4 w-full"></div>
+  </main>
+
+  <div id="status_footer" class="flex items-center justify-center"></div>
+
+ 
+  <div id="winModal" class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="bg-[#3367b0] text-white rounded-lg p-6 text-center space-y-4 shadow-lg">
+      <h2 class="text-2xl font-bold">🎉 You Won!</h2>
+      <p class="text-lg">Congratulations!</p>
+      <button id="winCloseBtn" class="px-4 py-2 bg-white text-[#3367b0] rounded-lg shadow hover:bg-white/90">
+        Play Again
+      </button>
+    </div>
+  </div>
+
+  <div id="loseModal" class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="bg-[#cf4214] text-white rounded-lg p-6 text-center space-y-4 shadow-lg">
+      <h2 class="text-2xl font-bold">Game Over</h2>
+      <p class="text-lg">You Lose</p>
+      <button id="loseCloseBtn" class="px-4 py-2 bg-white text-[#cf4214] rounded-lg shadow hover:bg-white/90">
+        Try Again
+      </button>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+
+</html>
