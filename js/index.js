@@ -77,7 +77,6 @@ $(document).ready(() => {
   });
 
   let allPokemon = [];
-  // capture the promise so we can await it later
   const loadPromise = $.getJSON('https://pokeapi.co/api/v2/pokemon?limit=1500')
     .then(data => {
       allPokemon = data.results.filter(p => !p.name.includes('-'));
